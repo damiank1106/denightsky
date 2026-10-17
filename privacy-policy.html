@@ -17,40 +17,43 @@
   <h1>DE Night Sky Privacy Policy</h1>
   <p class="muted"><strong>Effective date:</strong> October 17, 2026</p>
 
-  <p>DE Night Sky is an app for authorized users to view and manage a private Allsky camera system and its associated Raspberry Pi hardware. This policy explains the information the app processes and how that information is used.</p>
+  <p>DE Night Sky is an invitation-only app for a private family Allsky camera archive and its Raspberry Pi. This policy explains the account, media, telemetry, and operational information used to provide the service.</p>
 
   <h2>Information the app may process</h2>
   <p>Depending on the features enabled for your account and server, DE Night Sky may process:</p>
   <ul>
-    <li>Account and session information needed to authenticate you and determine your role, such as administrator, family viewer, or reviewer.</li>
+    <li>Your account email, role, and mobile-session information needed to authenticate you and enforce administrator, family-viewer, or Apple-reviewer permissions.</li>
     <li>Camera and system information, including live or stored sky imagery, camera status, storage information, Raspberry Pi status, and service health.</li>
-    <li>Environmental and equipment telemetry, including temperature, humidity, dew point, heater state, and related operational values.</li>
-    <li>Authorized control actions, such as administrator commands that change supported device settings or delete permitted data.</li>
+    <li>Environmental and equipment telemetry, including temperature, humidity, dew point, dew margin, heater mode/state, and related operational values.</li>
+    <li>Administrator-only actions, such as a single-recording deletion or heater-mode request, together with security and equipment-event logs.</li>
   </ul>
 
   <h2>How information is used</h2>
-  <p>Information is used only to provide, secure, diagnose, and operate DE Night Sky and the connected Allsky system. DE Night Sky does not sell personal information and is not designed to use personal information for advertising or cross-app tracking.</p>
+  <p>Information is used only to provide, secure, diagnose, and operate DE Night Sky and the connected Allsky system. DE Night Sky does not sell personal information, display advertising, or use third-party tracking analytics.</p>
 
   <h2>Authentication and local storage</h2>
-  <p>Authentication credentials or session tokens used by the app may be stored securely on your Apple device using platform security features such as Keychain. Removing the app removes app-local data, but information stored on the connected Raspberry Pi or server may remain until it is deleted there.</p>
+  <p>Administrator and family sign-in uses Cloudflare Access. A dedicated, temporary Apple-reviewer login uses a server-validated access code and is viewer-only. App session tokens are stored in the iOS Keychain, not in UserDefaults, and are removed locally on sign-out. A bounded thumbnail cache and app preferences may remain on the device until removed by iOS or the user. Removing the app does not automatically delete server-side media or logs.</p>
 
   <h2>Connected system and infrastructure</h2>
-  <p>DE Night Sky communicates with the Raspberry Pi and server endpoints configured for the deployment. Network and access infrastructure providers, including Cloudflare when used by the deployment, may process network and security metadata according to their own privacy policies and service terms.</p>
+  <p>The app communicates over HTTPS with DE Night Sky services. Cloudflare Access handles administrator and family authentication, and Cloudflare network services may process connection/security metadata under their own policies. The public policy page is hosted by GitHub Pages; visiting it is subject to GitHub's site privacy practices. Private family media is not published through GitHub Pages.</p>
+
+  <h2>Downloads and sharing</h2>
+  <p>When you choose to save, download, or share media, iOS may copy it to Photos, Files, another app, or a recipient you select. Those copies are then governed by that destination and your choices. Photos add-only permission is requested only when needed for a save action.</p>
 
   <h2>Data retention and deletion</h2>
-  <p>Operational data, images, and logs are retained according to the settings of the connected Allsky/Raspberry Pi system. Where administrator deletion features are available, authorized administrators can remove supported data from that system.</p>
+  <p>Images, videos, session records, and operational/security logs are retained on the private services according to the administrator's server settings; no fixed retention period is promised here. An authorized administrator can delete an individual supported recording. Family and Apple-reviewer accounts cannot delete recordings or control the heater. Contact the address below with a privacy or deletion question.</p>
 
   <h2>Security</h2>
   <p>DE Night Sky is designed to use authenticated access, encrypted network connections, role-based permissions, and Apple platform security features. No system can guarantee absolute security, so access credentials should be kept private and devices should remain updated.</p>
 
   <h2>Children</h2>
-  <p>DE Night Sky is not directed to children under 13 and is intended for authorized users of a privately managed camera system.</p>
+  <p>DE Night Sky is an invitation-only family service, not a public service directed to children. A parent or guardian should manage any minor family member's access.</p>
 
   <h2>Changes to this policy</h2>
   <p>This policy may be updated when DE Night Sky features or data-handling practices change. The effective date at the top of this page will be updated when material changes are published.</p>
 
   <h2>Contact</h2>
-  <p>For privacy or support questions, use the support information provided with your DE Night Sky deployment or the support contact listed on the app's App Store product page.</p>
+  <p>For privacy or support questions, email <a href="mailto:dedeveloper@icloud.com">dedeveloper@icloud.com</a>.</p>
 
   <p><a href="index.html">Back to DE Night Sky Support</a></p>
 </body>
