@@ -25,14 +25,14 @@
     <li>Your account email, role, and mobile-session information needed to authenticate you and enforce administrator, family-viewer, or Apple-reviewer permissions.</li>
     <li>Camera and system information, including live or stored sky imagery, camera status, storage information, Raspberry Pi status, and service health.</li>
     <li>Environmental and equipment telemetry, including temperature, humidity, dew point, dew margin, heater mode/state, and related operational values.</li>
-    <li>Administrator-only actions, such as a single-recording deletion or heater-mode request, together with security and equipment-event logs.</li>
+    <li>Administrator-only actions, such as recording/day deletion or a heater-mode request, together with security and equipment-event logs.</li>
   </ul>
 
   <h2>How information is used</h2>
   <p>Information is used only to provide, secure, diagnose, and operate DE Night Sky and the connected Allsky system. DE Night Sky does not sell personal information, display advertising, or use third-party tracking analytics.</p>
 
   <h2>Authentication and local storage</h2>
-  <p>Administrator and family sign-in uses Cloudflare Access. A dedicated, temporary Apple-reviewer login uses a server-validated access code and is viewer-only. App session tokens are stored in the iOS Keychain, not in UserDefaults, and are removed locally on sign-out. A bounded thumbnail cache and app preferences may remain on the device until removed by iOS or the user. Removing the app does not automatically delete server-side media or logs.</p>
+  <p>Administrator and family sign-in uses Cloudflare Access. A dedicated permanent Apple-reviewer login uses a server-validated password and is viewer-only. The reviewer password is stored by the backend only as a salted scrypt digest and is never embedded in the app. App session tokens are stored in the iOS Keychain, not in UserDefaults, and are removed locally on sign-out. A bounded thumbnail cache and app preferences may remain on the device until removed by iOS or the user. Removing the app does not automatically delete server-side media or logs.</p>
 
   <h2>Connected system and infrastructure</h2>
   <p>The app communicates over HTTPS with DE Night Sky services. Cloudflare Access handles administrator and family authentication, and Cloudflare network services may process connection/security metadata under their own policies. The public policy page is hosted by GitHub Pages; visiting it is subject to GitHub's site privacy practices. Private family media is not published through GitHub Pages.</p>
@@ -41,7 +41,7 @@
   <p>When you choose to save, download, or share media, iOS may copy it to Photos, Files, another app, or a recipient you select. Those copies are then governed by that destination and your choices. Photos add-only permission is requested only when needed for a save action.</p>
 
   <h2>Data retention and deletion</h2>
-  <p>Images, videos, session records, and operational/security logs are retained on the private services according to the administrator's server settings; no fixed retention period is promised here. An authorized administrator can delete an individual supported recording. Family and Apple-reviewer accounts cannot delete recordings or control the heater. Contact the address below with a privacy or deletion question.</p>
+  <p>Images, videos, session records, and operational/security logs are retained on the private services according to the administrator's server settings; no fixed retention period is promised here. An authorized administrator can delete supported recordings. Family and Apple-reviewer accounts cannot delete recordings, delete archive days, or control the heater. Contact the address below with a privacy or deletion question.</p>
 
   <h2>Security</h2>
   <p>DE Night Sky is designed to use authenticated access, encrypted network connections, role-based permissions, and Apple platform security features. No system can guarantee absolute security, so access credentials should be kept private and devices should remain updated.</p>
