@@ -15,7 +15,7 @@
 </head>
 <body>
   <h1>DE Night Sky Privacy Policy</h1>
-  <p class="muted"><strong>Effective date:</strong> October 17, 2026</p>
+  <p class="muted"><strong>Effective date:</strong> October 22, 2026</p>
 
   <p>DE Night Sky is an invitation-only app for a private family Allsky camera archive and its Raspberry Pi. This policy explains the account, media, telemetry, and operational information used to provide the service.</p>
 
@@ -32,29 +32,31 @@
   <p>Information is used only to provide, secure, diagnose, and operate DE Night Sky and the connected Allsky system. DE Night Sky does not sell personal information, display advertising, or use third-party tracking analytics.</p>
 
   <h2>Authentication and local storage</h2>
-  <p>Administrator and family sign-in uses Cloudflare Access. A dedicated permanent Apple-reviewer login uses a server-validated password and is viewer-only. The reviewer password is stored by the backend only as a salted scrypt digest and is never embedded in the app. App session tokens are stored in the iOS Keychain, not in UserDefaults, and are removed locally on sign-out. A bounded thumbnail cache and app preferences may remain on the device until removed by iOS or the user. Removing the app does not automatically delete server-side media or logs.</p>
+  <p>Every approved account uses the same native email-and-password sign-in screen and the same rate-limited DE Night Sky authentication endpoint. The backend stores passwords only as salted Argon2id hashes with a unique random salt per account; plaintext passwords are never embedded in the app. Successful authentication issues short-lived app access credentials and rotating refresh credentials, which are stored only in the iOS Keychain and sent only over encrypted HTTPS. Cloudflare Tunnel carries traffic to the private Raspberry Pi service without exposing a public Pi port. Signing out revokes the local refresh session. A password change revokes every active app session for that account and requires a fresh sign-in.</p>
+  <p>A bounded thumbnail cache and app preferences may remain on the device until removed by iOS or the user. Removing the app does not automatically delete server-side media or logs.</p>
 
-  <h2>Connected system and infrastructure</h2>
-  <p>The app communicates over HTTPS with DE Night Sky services. Cloudflare Access handles administrator and family authentication, and Cloudflare network services may process connection/security metadata under their own policies. The public policy page is hosted by GitHub Pages; visiting it is subject to GitHub's site privacy practices. Private family media is not published through GitHub Pages.</p>
+  <h2>Private family media</h2>
+  <p>Sky images, videos, Startrails, keograms, events, and related metadata are private family content. They are available only to approved, authenticated accounts and are not intended for public indexing or advertising use.</p>
 
   <h2>Downloads and sharing</h2>
-  <p>When you choose to save, download, or share media, iOS may copy it to Photos, Files, another app, or a recipient you select. Those copies are then governed by that destination and your choices. Photos add-only permission is requested only when needed for a save action.</p>
+  <p>Media is downloaded only when you request it. When you save or share an item, iOS may copy it to Photos, Files, another app, or a recipient you select. Those copies are then governed by your choices and the destination's privacy practices.</p>
 
-  <h2>Data retention and deletion</h2>
-  <p>Images, videos, session records, and operational/security logs are retained on the private services according to the administrator's server settings; no fixed retention period is promised here. An authorized administrator can delete supported recordings. Family and Apple-reviewer accounts cannot delete recordings, delete archive days, or control the heater. Contact the address below with a privacy or deletion question.</p>
+  <h2>Roles and administrator actions</h2>
+  <p>Family and Apple-reviewer accounts are read-only. Only the exact configured administrator may request deletion of eligible recordings or change heater mode. The backend enforces these permissions and may record administrator, authentication, deletion, and equipment events in operational logs. The administrator can see a safe read-only account list containing email, role, and enabled state; passwords and password hashes are never displayed.</p>
 
-  <h2>Security</h2>
-  <p>DE Night Sky is designed to use authenticated access, encrypted network connections, role-based permissions, and Apple platform security features. No system can guarantee absolute security, so access credentials should be kept private and devices should remain updated.</p>
+  <h2>Apple review access</h2>
+  <p>A dedicated, revocable Apple-reviewer account uses the same sign-in screen and session protections as every other account. It is viewer-only and cannot delete media, control the heater, manage accounts, or perform other administrator actions.</p>
+
+  <h2>Retention</h2>
+  <p>Authentication and session records, operational logs, archive retention, and deletion records are managed by the private DE Night Sky services. No fixed retention period is promised; contact us with a privacy or deletion question.</p>
 
   <h2>Children</h2>
-  <p>DE Night Sky is an invitation-only family service, not a public service directed to children. A parent or guardian should manage any minor family member's access.</p>
+  <p>This is an invitation-only private family service and is not directed to the general public. A parent or guardian should manage access for any minor family member.</p>
 
-  <h2>Changes to this policy</h2>
-  <p>This policy may be updated when DE Night Sky features or data-handling practices change. The effective date at the top of this page will be updated when material changes are published.</p>
+  <h2>Changes</h2>
+  <p>This policy may be updated when the app, backend, or data practices change. This page will show the current effective date.</p>
 
   <h2>Contact</h2>
-  <p>For privacy or support questions, email <a href="mailto:dedeveloper@icloud.com">dedeveloper@icloud.com</a>.</p>
-
-  <p><a href="index.html">Back to DE Night Sky Support</a></p>
+  <p>Privacy and support questions: <a href="mailto:dedeveloper@icloud.com">dedeveloper@icloud.com</a></p>
 </body>
 </html>
